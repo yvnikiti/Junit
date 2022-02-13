@@ -8,12 +8,14 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import pages.SearchPage;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class googleTests {
 
     private static WebDriver driver;
+    private static SearchPage SearchPage;
 
     @BeforeAll
     public static void init() {
@@ -21,13 +23,14 @@ public class googleTests {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
         driver = new ChromeDriver(options);
+        SearchPage = new SearchPage(driver);
     }
     @Test
     public void test1() {
 
         driver.get ("http://google.com");
-        driver.findElement(By.cssSelector("input")).sendKeys("selenium", Keys.ENTER);
-        assertEquals(13,driver.findElements(By.cssSelector("#search .g")).size());
+        SearchPage.search("selenuim");
+        assertEquals(13, SearchPage.results.size());
 
     }
 @AfterAll
