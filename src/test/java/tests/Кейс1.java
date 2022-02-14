@@ -2,8 +2,10 @@ package tests;
 
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.FindBy;
 import pages.DetailsPage;
 import pages.SearchPage;
 
@@ -33,7 +35,7 @@ public class Кейс1 {
     @DisplayName("Проверка операций с целыми числами")
     public void test1() {
         SearchPage.search("Калькулятор");
-    }
+                  }
 
      @AfterAll
     public static void teardown() {

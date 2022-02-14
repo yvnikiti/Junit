@@ -21,14 +21,18 @@ public class DetailsPage {
     public DetailsPage(WebDriver driver) {
         initElements(driver, this);
     }
-    public String getLastVersion(){
-       return lastVersion.getText();
+
+    public String getLastVersion() {
+        return lastVersion.getText();
     }
+
     public String getLicense() {
         return license.getText();
     }
-        public String getName(){
-            return name.getText();
-}
 
+    public String getName() {
+        return name.getText();
+    }
+
+}
     }
